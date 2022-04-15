@@ -1,19 +1,28 @@
 <script>
-    import {todos} from '~/store';
+    import {todos, saveStorage} from '~/store';
     import shortid from 'shortid'
 
-    let title = '';
+    let title = ''
 
     function createTodo() {
+        if(!title || !title.trim()) return
+        
         $todos.unshift({
             id: shortid.generate(),
             title
         })
+        $todos = $todos
+        saveStorage()
+
+        title = ''
         console.log($todos)
     };
 </script>
 
-<div class="create-todo">
+<div class="bidtitle">
+    <h1>TodoList</h1>
+</div>
+<div class="create-todo" id="create-todo">
     <input 
     bind:value={title} 
     type="text"
@@ -29,7 +38,16 @@
 </div>
 
 <style lang="scss">
-    .create-tood {
+    .bidtitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size: 50px;
+            
+        }
+    }
+    .create-todo {
         display: flex;
         margin-top: 50px;
         .btn {
