@@ -3,7 +3,7 @@ module.exports = {
     public: "/",
     src: "/dist",
   },
-  plugins: ["@snowpack/plugin-svelte", "@snowpack/plugin-optimize"],
+  plugins: ["@snowpack/plugin-svelte", "@snowpack/plugin-optimize", "@snowpack/plugin-babel"],
   alias: {
     "~": "./src",
   },
