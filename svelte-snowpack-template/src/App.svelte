@@ -3,13 +3,8 @@
 </script>
 
 <style lang="scss">
-    $color: red;
-    h1{
-        color: $color
-    }
-    .minseong{
-        color: red;
-    }
+    @import './scss/main';
 </style>
 
 <h1>{name}</h1>
+<button class="btn btn-primary">TEST!</button>
